@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandleBars</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+   
+    <div class="container mb-3  mt-4 ">
+        <h1>HandlesBars Page {{name}}</h1>
+        <form action="/api/users" method="POST" class="mt-5 mb-5">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" name="name" class="form-control" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="country">country: </label>
+                <input type="text" name="country" class="form-control" placeholder="Enter your country">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" class=" btn btn-primary btn-block" value="submit"/>
+            </div>
+        </form>
+        <h4>Users</h4>
+      <ul class="list-group  mt-4 ">
+        {{#each Users}}
+            <li class="list-group-item">{{this.name}} : {{this.country}}</li>
+        {{/each}}
+      </ul>
+      <a href="/api/users" class="btn btn-light mt-4">Visit Api</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
